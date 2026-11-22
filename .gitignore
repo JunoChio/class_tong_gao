@@ -1,0 +1,35 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---------- PyInstaller / 打包产物 ----------
+build/
+dist/
+*.spec.bak
+
+# ---------- 运行时生成的文件 ----------
+app.log
+*.log
+config.json
+
+# ---------- 压缩包 / 发布件 ----------
+*.zip
+*.7z
+
+# ---------- Node / Next.js ----------
+node_modules/
+.next/
+out/
+.wrangler/
+.env*.local
+*.tsbuildinfo
+
+# ---------- 系统 / 编辑器 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

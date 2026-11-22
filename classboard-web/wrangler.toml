@@ -1,0 +1,12 @@
+name = "classboard-desktop"
+pages_build_output_dir = "out"
+compatibility_date = "2025-01-01"
+
+[[d1_databases]]
+binding = "BOARD_DB"
+database_name = "classboard-db"
+database_id = "60ab632a-95c7-4eab-a75c-5e01f5a33e86"
+
+[[kv_namespaces]]
+binding = "BOARD_KV"
+id = "aa8986714fa9488d9204987ec24e82db"

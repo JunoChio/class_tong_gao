@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --desktop-wallpaper: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 桌面模式自动隐藏仅浏览器预览可见的角落入口按钮 */
+html[data-desktop-client="true"] .web-only-controls {
+  display: none !important;
+}
+
+/* 功课/通知超出一屏时的无缝向上循环滚动动画 */
+@keyframes classboard-marquee-y {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+.marquee-track-y {
+  will-change: transform;
+  animation-name: classboard-marquee-y;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.marquee-viewport:hover .marquee-track-y {
+  animation-play-state: paused !important;
+}
+
+.marquee-mask-y {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+
+/* 当客户端注入了目标电脑原壁纸时，像素级铺满原壁纸；浏览器打开时优雅回退为暖光奶油虚化背景 */
+.classboard-wallpaper-stage {
+  background-color: #f3e2c8;
+  background-image:
+    var(--desktop-wallpaper),
+    radial-gradient(circle at 18% 24%, rgba(255, 250, 236, 0.85) 0%, rgba(255, 250, 236, 0) 36%),
+    radial-gradient(circle at 26% 62%, rgba(255, 245, 224, 0.7) 0%, rgba(255, 245, 224, 0) 32%),
+    radial-gradient(circle at 82% 76%, rgba(250, 223, 185, 0.65) 0%, rgba(250, 223, 185, 0) 45%),
+    linear-gradient(135deg, #edd7b6 0%, #f8ead4 48%, #f1dab8 100%);
+  background-size: cover, auto, auto, auto, cover;
+  background-position: center, center, center, center, center;
+  background-repeat: no-repeat;
+}

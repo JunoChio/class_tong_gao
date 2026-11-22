@@ -1,0 +1,10 @@
+{
+    "url": "http://localhost:3000",
+    "auto_start": false,
+    "start_as_wallpaper": true,
+    "sync_system_wallpaper": true,
+    "pause_when_occluded": true,
+    "window_title": "DesktopBoard_Wallpaper_Host",
+    "interactive_width": 1280,
+    "interactive_height": 800
+}
